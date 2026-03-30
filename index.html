@@ -18,9 +18,11 @@
     style="font-size:18px; background:#f0a500; color:black; padding:10px 20px; border-radius:10px; border:none;">
     🎁 Claim Reward (Watch Ad)
   </button>
-
-  <script>
+<script>
     let score = 0;
+
+    // Initialize Telegram Web App
+    const tg = window.Telegram.WebApp;
 
     function tap() {
       score++;
@@ -28,15 +30,20 @@
     }
 
     function claimReward() {
+      // Open ad in external browser to bypass Telegram restrictions
+      tg.openLink('https://toby0815.github.io/my-game/reward.html');
+      
       show_10805769('pop').then(() => {
-        // reward user after watching ad
         score += 50;
         document.getElementById('score').innerText = score;
         alert('🎉 You earned 50 coins!');
       }).catch(e => {
-        alert('⚠️ Ad not available, try again later!');
+        // Still reward user even if ad fails
+        score += 10;
+        document.getElementById('score').innerText = score;
+        alert('⚠️ Ad not available, here are 10 coins!');
       });
     }
-  </script>
+</script>
 </body>
 </html>
