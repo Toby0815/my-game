@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Claim Reward</title>
+  <script src="https://umcdnc.com/tag.min.js" 
+    data-zone="10805769" async></script>
+  <style>
+    body { text-align: center; font-family: Arial; 
+    background: #1a1a2e; color: white; padding: 40px; }
+    h1 { color: #f0a500; }
+  </style>
+</head>
+<body>
+  <h1>🎁 Your Reward is Loading...</h1>
+  <p>Please wait while your ad loads.</p>
+  <p>Once done, go back to the game to collect your coins!</p>
+  <script>
+    show_10805769('pop').then(() => {
+      document.body.innerHTML = 
+        '<h1>✅ Done! Go back to collect your 50 coins!</h1>';
+    }).catch(e => {
+      document.body.innerHTML = 
+        '<h1>⚠️ Ad unavailable. Go back and try again!</h1>';
+    });
+  </script>
+</body>
+</html>
