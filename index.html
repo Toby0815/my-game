@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Clicker Game</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body { text-align: center; font-family: Arial; background: #1a1a2e; color: white; }
+    button { font-size: 60px; margin-top: 100px; cursor: pointer; background: none; border: none; }
+    h1 { font-size: 30px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <h1>Coins: <span id="score">0</span></h1>
+  <button onclick="tap()">🪙</button>
+  <br><br>
+  <button id="reward-btn" onclick="claimReward()" 
+    style="font-size:18px; background:#f0a500; color:black; padding:10px 20px; border-radius:10px; border:none;">
+    🎁 Claim Reward (Watch Ad)
+  </button>
+
+  <script>
+    let score = 0;
+    function tap() {
+      score++;
+      document.getElementById('score').innerText = score;
+    }
+    function claimReward() {
+      window.open('PASTE-YOUR-MONETAG-SMARTLINK-HERE', '_blank');
+    }
+  </script>
+</body>
+</html>
